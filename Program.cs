@@ -3,14 +3,40 @@
 // либо задать на старте выполнения алгоритма. При решении не рекомендуется пользоваться коллекциями,
 // лучше обойтись исключительно массивами.
 
-// Метод распечатки
-string GoodPrint(string[] arrayInt)
+void InputCondition()
 {
-  return $"{String.Join(" ", arrayInt)} -> ";
+  Console.Clear();
+  Console.WriteLine("----------------------------------------------------------\n" + 
+                    "Запишите любое количество различных символов через пробел!\n" + 
+                     "----------------------------------------------------------");
 }
 
+// Метод определения значения элементов из символов менее 3
+string GetArrayLessThree(string[] array)
+{
+  string result = String.Empty;
+  for (int i = 0; i < array.Length; i++)
+  {
+    if (array[i].Length <= 3)
+    {
+      result += $"{array[i]}, ";
+    }
+  }
+  if (result.Length > 0)
+  {
+  result = result.Substring(0, result.Length - 2);
+  return result;
+  }
+  else return result;
+}
 
+// Метод распечатки
+string GoodPrint(string[] arrayInt, string stringInt)
+{
+  return $"[{String.Join(",", arrayInt)}] -> [{stringInt}]";
+}
 
-string[] array = Console.ReadLine()!
-                     .Split(' ');
-Console.WriteLine(GoodPrint(array));
+InputCondition();
+string[] characters = Console.ReadLine()!
+                             .Split(' ');
+Console.Write(GoodPrint(characters, GetArrayLessThree(characters)));
