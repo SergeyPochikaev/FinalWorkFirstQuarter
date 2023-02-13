@@ -6,8 +6,8 @@
 void InputCondition()
 {
   Console.Clear();
-  Console.WriteLine("----------------------------------------------------------\n" + 
-                    "Запишите любое количество различных символов через пробел!\n" + 
+  Console.WriteLine("----------------------------------------------------------\n" +
+                    "Запишите любое количество различных символов через пробел!\n" +
                      "----------------------------------------------------------");
 }
 
@@ -24,8 +24,8 @@ string GetArrayLessThree(string[] array)
   }
   if (result.Length > 0)
   {
-  result = result.Substring(0, result.Length - 2);
-  return result;
+    result = result.Substring(0, result.Length - 2);
+    return result;
   }
   else return result;
 }
